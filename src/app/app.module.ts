@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
 import { WarningAlertComponent } from './components/warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComponentsComponent,
     WarningAlertComponent,
-    SuccessAlertComponent
+    SuccessAlertComponent,
+    DataBindingComponent
   ],
   imports: [
     BrowserModule,
