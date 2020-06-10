@@ -1,0 +1,18 @@
+<h3>Assignment Instructions:</h3>
+<ol>
+    <li>Add a button which says "Toggle Details"</li>
+    <li>Add a paragraph with any content of your choice</li>
+    <li>Toggle the displaying of that paragraph with the button created in the first step</li>
+    <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or
+        incremenet a number)</li>
+    <li>Starting at the 5th log item, give all future items a blue background (via ngStyle) and white color text
+        (ngClass)</li>
+</ol>
+<hr>
+<h3>Result:</h3>
+<button class="btn btn-primary mb-3" (click)="onToggle()">Toggle Details</button>
+<p *ngIf="showDetails" class="alert alert-primary" role="alert">This paragraph is toggled by clicking the Display
+    Details button!</p>
+<div *ngFor="let message of messages; index as i">
+    <span [ngStyle]="{backgroundColor:i >= 4 ? 'dodgerblue' : 'transparent'}" [ngClass]="{whiteText:i >= 4}">{{ message }}</span>
+</div>
