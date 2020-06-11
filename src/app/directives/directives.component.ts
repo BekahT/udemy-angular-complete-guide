@@ -17,6 +17,6 @@ export class DirectivesComponent implements OnInit {
 
   onToggle() {
     this.showDetails ? this.showDetails = false : this.showDetails = true;
-    this.messages.push(++this.numClicks + ": " + Date().toString());
+    this.messages.push(++this.numClicks + ": " + new Date());
   }
 }
