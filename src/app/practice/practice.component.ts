@@ -6,35 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./practice.component.css']
 })
 export class PracticeComponent implements OnInit {
-  allowNewServer = false;
-  // serverCreationStatus = 'No server was created!';
-  serverName = 'Testserver';
-  serverCreated = false;
-  serverId: number = 10;
-  serverStatus: string = 'offline';
-  servers = ['TestServer', 'TestServer2'];
+  serverElements = [{type: 'server', name: 'TestServer', content: 'Just a test'}, {type: 'server', name: 'AnotherTest', content: 'Just another test'}];
 
-  constructor() {setTimeout(() => {
-      this.allowNewServer = true;
-    }, 2000);
-      this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
-  }
+  constructor() {}
 
   ngOnInit(): void {
+  }   
+
+  onServerAdded(serverData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
   }
 
-  onCreateServer() {
-    // this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
-    this.serverCreated = true;
-    this.servers.push(this.serverName);
-  }
-
-  // onUpdateServerName(event: Event) {
-  //   this.serverName = (<HTMLInputElement>event.target).value;
-  // }
-
-  getColor() {
-    return this.serverStatus === 'online' ? 'green' : 'red';
+  onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent
+    });
   }
 
 }
