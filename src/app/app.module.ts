@@ -11,6 +11,10 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PracticeComponent } from './practice/practice.component';
 import { CockpitComponent } from './practice/cockpit/cockpit.component';
 import { ServerElementComponent } from './practice/server-element/server-element.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
+import { GameControlComponent } from './event-binding/game-control/game-control.component';
+import { OddComponent } from './event-binding/odd/odd.component';
+import { EvenComponent } from './event-binding/even/even.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,10 @@ import { ServerElementComponent } from './practice/server-element/server-element
     PracticeComponent,
     CockpitComponent,
     ServerElementComponent,
+    EventBindingComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent,
   ],
   imports: [
     BrowserModule,
