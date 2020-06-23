@@ -1,0 +1,39 @@
+<h3>Assignment Instructions:</h3>
+<ol>
+    <li>Create a directive to give a paragraph element a background color.</li>
+    <li>Create a directive using Renderer2 to give a paragraph element a background color.</li>
+    <li>Create a directive using HostListener that gives a paragraph a background color on the MouseEnter event.</li>
+    <li>Create a directive using HostBinding that gives a paragraph a background color on the MouseEnter event.</li>
+    <li>Create a directive that gives a paragraph a background color on the MouseEnter event and another background color on the MouseLeave event using the user's input for
+        the background colors.</li>
+</ol>
+<hr>
+<h3>Result 1:</h3>
+<p appBasicHighlight>This paragraph is styled with a green background through the Basic Highlight directive.</p>
+
+<h3>Result 2:</h3>
+<p appRendererHighlight>This paragraph is styled with a blue background through the Renderer Highlight directive.</p>
+
+<h3>Result 3:</h3>
+<p appHostListenerHighlight>This paragraph is styled with a purple background on mouseenter through the Host Listener
+    Highlight directive.</p>
+
+<h3>Result 4:</h3>
+<p appHostBindingHighlight>This paragraph is styled with a yellow background on mouseenter through the Host Binding
+    Highlight directive.</p>
+
+<h3>Result 5:</h3>
+<div class="form-group">
+    <label for="defaultColor">Select the default / mouse exit background color</label>
+    <select [(ngModel)]="selectedDefaultColor" class="form-control" id="defaultColor">
+        <option *ngFor="let option of defaultOptions" [value]="option">{{ option }}</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="highlightColor">Select the background color on mouse over</label>
+    <select [(ngModel)]="selectedHighlightColor" class="form-control" id="highlightColor">
+        <option *ngFor="let option of highlightOptions" [value]="option">{{ option }}</option>
+    </select>
+</div>
+<p appUserInputHighlight [defaultColor]="selectedDefaultColor" [highlightColor]="selectedHighlightColor">This paragraph is styled with a background
+    color, depending on the user's selection, by default and a different background color on mouseenter, also depending on the user's selection, through the User Input Highlight directive.</p>

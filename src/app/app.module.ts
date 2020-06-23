@@ -9,12 +9,16 @@ import { SuccessAlertComponent } from './components/success-alert/success-alert.
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PracticeComponent } from './practice/practice.component';
-import { CockpitComponent } from './practice/cockpit/cockpit.component';
-import { ServerElementComponent } from './practice/server-element/server-element.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { GameControlComponent } from './event-binding/game-control/game-control.component';
 import { OddComponent } from './event-binding/odd/odd.component';
 import { EvenComponent } from './event-binding/even/even.component';
+import { BasicHighlightDirective } from './directives-deep-dive/basic-highlight/basic-highlight.directive';
+import { DirectivesDeepDiveComponent } from './directives-deep-dive/directives-deep-dive.component';
+import { RendererHighlightDirective } from './directives-deep-dive/renderer-highlight/renderer-highlight.directive';
+import { HostListenerHighlightDirective } from './directives-deep-dive/host-listener-highlight/host-listener-highlight.directive';
+import { HostBindingHighlightDirective } from './directives-deep-dive/host-binding-highlight/host-binding-highlight.directive';
+import { UserInputHighlightDirective } from './directives-deep-dive/user-input-highlight/user-input-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,16 @@ import { EvenComponent } from './event-binding/even/even.component';
     DataBindingComponent,
     DirectivesComponent,
     PracticeComponent,
-    CockpitComponent,
-    ServerElementComponent,
     EventBindingComponent,
     GameControlComponent,
     OddComponent,
     EvenComponent,
+    BasicHighlightDirective,
+    DirectivesDeepDiveComponent,
+    RendererHighlightDirective,
+    HostListenerHighlightDirective,
+    HostBindingHighlightDirective,
+    UserInputHighlightDirective
   ],
   imports: [
     BrowserModule,
