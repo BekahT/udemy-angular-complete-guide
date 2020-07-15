@@ -19,6 +19,11 @@ import { RendererHighlightDirective } from './directives-deep-dive/renderer-high
 import { HostListenerHighlightDirective } from './directives-deep-dive/host-listener-highlight/host-listener-highlight.directive';
 import { HostBindingHighlightDirective } from './directives-deep-dive/host-binding-highlight/host-binding-highlight.directive';
 import { UserInputHighlightDirective } from './directives-deep-dive/user-input-highlight/user-input-highlight.directive';
+import { AccountComponent } from './practice/account/account.component';
+import { NewAccountComponent } from './practice/new-account/new-account.component';
+import { ServicesComponent } from './services/services.component';
+import { ActiveUsersComponent } from './services/active-users/active-users.component';
+import { InactiveUsersComponent } from './services/inactive-users/inactive-users.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { UserInputHighlightDirective } from './directives-deep-dive/user-input-h
     RendererHighlightDirective,
     HostListenerHighlightDirective,
     HostBindingHighlightDirective,
-    UserInputHighlightDirective
+    UserInputHighlightDirective,
+    AccountComponent,
+    NewAccountComponent,
+    ServicesComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,
