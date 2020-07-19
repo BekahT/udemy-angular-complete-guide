@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
@@ -19,11 +20,22 @@ import { RendererHighlightDirective } from './directives-deep-dive/renderer-high
 import { HostListenerHighlightDirective } from './directives-deep-dive/host-listener-highlight/host-listener-highlight.directive';
 import { HostBindingHighlightDirective } from './directives-deep-dive/host-binding-highlight/host-binding-highlight.directive';
 import { UserInputHighlightDirective } from './directives-deep-dive/user-input-highlight/user-input-highlight.directive';
-import { AccountComponent } from './practice/account/account.component';
-import { NewAccountComponent } from './practice/new-account/new-account.component';
 import { ServicesComponent } from './services/services.component';
 import { ActiveUsersComponent } from './services/active-users/active-users.component';
 import { InactiveUsersComponent } from './services/inactive-users/inactive-users.component';
+import { HomeComponent } from './practice/home/home.component';
+import { UsersComponent } from './practice/users/users.component';
+import { ServersComponent } from './practice/servers/servers.component';
+import { UserComponent } from './practice/users/user/user.component';
+import { EditServerComponent } from './practice/servers/edit-server/edit-server.component';
+import { ServerComponent } from './practice/servers/server/server.component';
+import { ServersService } from './practice/servers/servers.service';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'servers', component: ServersComponent }
+];
 
 @NgModule({
   declarations: [
@@ -44,17 +56,22 @@ import { InactiveUsersComponent } from './services/inactive-users/inactive-users
     HostListenerHighlightDirective,
     HostBindingHighlightDirective,
     UserInputHighlightDirective,
-    AccountComponent,
-    NewAccountComponent,
     ServicesComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    HomeComponent,
+    UsersComponent,
+    ServersComponent,
+    UserComponent,
+    EditServerComponent,
+    ServerComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
