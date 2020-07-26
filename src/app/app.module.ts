@@ -34,7 +34,9 @@ import { ServersService } from './practice/servers/servers.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent },
-  { path: 'servers', component: ServersComponent }
+  { path: 'users/:id/:name', component: UserComponent },
+  { path: 'servers', component: ServersComponent },
+  { path: 'servers/:id/edit', component: EditServerComponent }
 ];
 
 @NgModule({
