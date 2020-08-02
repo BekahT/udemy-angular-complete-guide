@@ -22,20 +22,8 @@ import { UserInputHighlightDirective } from './directives-deep-dive/user-input-h
 import { ServicesComponent } from './services/services.component';
 import { ActiveUsersComponent } from './services/active-users/active-users.component';
 import { InactiveUsersComponent } from './services/inactive-users/inactive-users.component';
-import { HomeComponent } from './practice/home/home.component';
-import { UsersComponent } from './practice/users/users.component';
-import { ServersComponent } from './practice/servers/servers.component';
-import { UserComponent } from './practice/users/user/user.component';
-import { EditServerComponent } from './practice/servers/edit-server/edit-server.component';
-import { ServerComponent } from './practice/servers/server/server.component';
-import { ServersService } from './practice/servers/servers.service';
-import { PageNotFoundComponent } from './practice/page-not-found/page-not-found.component';
-import { AppRoutingModule } from './app-routing.module';
-import { AuthService } from './auth.service';
-import { AuthGuard } from './auth-guard.service';
-import { CanDeactivateGuard } from './practice/servers/edit-server/can-deactivate-guard.service';
-import { ErrorPageComponent } from './practice/error-page/error-page.component';
-import { ServerResolver } from './practice/servers/server/server-resolver.service';
+
+
 
 @NgModule({
   declarations: [
@@ -56,24 +44,17 @@ import { ServerResolver } from './practice/servers/server/server-resolver.servic
     HostListenerHighlightDirective,
     HostBindingHighlightDirective,
     UserInputHighlightDirective,
-    ServicesComponent,
+    ServicesComponent, 
     ActiveUsersComponent,
     InactiveUsersComponent,
-    HomeComponent,
-    UsersComponent,
-    ServersComponent,
-    UserComponent,
-    EditServerComponent,
-    ServerComponent,
-    PageNotFoundComponent,
-    ErrorPageComponent
+    // Below here is practice
+ 
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule
-  ],
-  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard, ServerResolver],
+    FormsModule
+   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
