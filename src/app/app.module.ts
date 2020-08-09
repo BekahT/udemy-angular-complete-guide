@@ -22,6 +22,7 @@ import { UserInputHighlightDirective } from './directives-deep-dive/user-input-h
 import { ServicesComponent } from './services/services.component';
 import { ActiveUsersComponent } from './services/active-users/active-users.component';
 import { InactiveUsersComponent } from './services/inactive-users/inactive-users.component';
+import { TdFormsComponent } from './td-forms/td-forms.component';
 
 
 
@@ -47,6 +48,7 @@ import { InactiveUsersComponent } from './services/inactive-users/inactive-users
     ServicesComponent, 
     ActiveUsersComponent,
     InactiveUsersComponent,
+    TdFormsComponent,
     // Below here is practice
  
   ],

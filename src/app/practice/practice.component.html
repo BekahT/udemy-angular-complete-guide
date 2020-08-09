@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-        <div id="user-data">
+        <div id="user-data" ngModelGroup="userData">
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" class="form-control" ngModel name="username" required>
@@ -22,8 +22,29 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <div class="form-group">
+          <textarea class="form-control" name="questionAnswer" cols="61" rows="3" [(ngModel)]="answer" required></textarea>
+        </div>
+        <p>Your Answer: {{ answer }}</p>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input type="radio" name="gender" ngModel [value]="gender" required>
+            {{ gender }}
+          </label>
+        </div>
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
       </form>
+    </div>
+  </div>  
+  <hr>
+  <div class="row">
+    <div class="col-xs-12" *ngIf="submitted">
+      <h3>Your Data</h3>
+      <p>Username: {{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Question: {{ user.secretQuestion }}</p>
+      <p>Answer: {{ user.answer }}</p>
+      <p>Gender: {{ user.gender }}</p>
     </div>
   </div>
 </div>

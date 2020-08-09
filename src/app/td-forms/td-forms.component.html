@@ -1,0 +1,54 @@
+<h3>Template-Driven Forms Assignment Instructions:</h3>
+<ol>
+  <li>Add a Form with the following Inputs (and Validators)
+    <ol>
+      <li>
+        Email address (should not be empty and should be an email address)
+      </li>
+      <li>A Dropdown which allows the user to select from three different Subscriptions ("Basic", "Advanced", "Pro")
+        Set "Advanced" as Default</li>
+      <li>
+        A Password field (should not be empty)
+      </li>
+      <li>
+        A Submit Button
+      </li>
+    </ol>
+  </li>
+  <li>Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if
+    it's invalid.
+  </li>
+  <li>Upon submitting the form, you should simply print the Value of the Form to the Console.
+    Optionally, display it in your template.</li>
+</ol>
+<hr>
+<h3>Result:</h3>
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+    <span *ngIf="!email.valid && email.touched" class="text-muted">Invalid email. Please try again.</span>
+  </div>
+  <div class="form-group">
+    <label for="subscription">Subscription Level</label>
+    <select id="subscription" class="form-control" ngModel name="subscription" required [ngModel]="selectedSubscription">
+      <option *ngFor="let subscription of subscriptions" [value]="subscription"> {{ subscription }} </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" class="form-control" ngModel name="password" required #password="ngModel">
+    <span *ngIf="!password.valid && password.touched" class="text-muted">Invalid password. Please try again.</span>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+  <div class="alert alert-danger mt-3" role="alert" *ngIf="!form.valid && form.touched">
+    At least one input contains invalid data or is empty.
+  </div>
+</form>
+<div *ngIf="submitted">
+  <hr>
+  <h4>Submitted Form Data</h4>
+  <p>Email: {{ user.email }}</p>
+  <p>Subscription Level: {{ user.subscription }}</p>
+  <p>Password: {{ user.password }}</p>
+</div>
