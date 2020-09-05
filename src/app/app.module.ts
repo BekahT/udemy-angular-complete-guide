@@ -23,6 +23,7 @@ import { ServicesComponent } from './services/services.component';
 import { ActiveUsersComponent } from './services/active-users/active-users.component';
 import { InactiveUsersComponent } from './services/inactive-users/inactive-users.component';
 import { TdFormsComponent } from './td-forms/td-forms.component';
+import { RFormsComponent } from './r-forms/r-forms.component';
 
 
 
@@ -49,6 +50,7 @@ import { TdFormsComponent } from './td-forms/td-forms.component';
     ActiveUsersComponent,
     InactiveUsersComponent,
     TdFormsComponent,
+    RFormsComponent,
     // Below here is practice
  
   ],

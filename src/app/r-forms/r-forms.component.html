@@ -1,0 +1,52 @@
+<h3>Reactive Forms Assignment Instructions:</h3>
+<ol>
+    <li>Create a Form with the following Controls and Validators.
+        <ul>
+            <li>Project Name (should not be empty)</li>
+            <li>Email (should not be a empty and a valid email)</li>
+            <li>Project Status Dropdown, with three values: 'Stable', 'Critical', 'Finished'</li>
+            <li>Submit Button</li>
+        </ul>
+    </li>
+    <li>Add your own Validator which doesn't allow "Test" as a Project Name.</li>
+    <li>Also implement that Validator as an async Validator (replace the other one).</li>
+    <li>Upon submitting the form, simply print the value to the console. Optionally, display it in your template.</li>
+</ol>
+<hr>
+<h3>Result:</h3>
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="project">Project Name</label>
+        <input type="text" id="project" formControlName="project" class="form-control">
+        <span class="text-muted" *ngIf="!projectForm.get('project').valid && projectForm.get('project').touched && projectForm.get('project').errors">
+            <span *ngIf="projectForm.get('project').errors['required']">Project Name is required!</span>
+            <span *ngIf="projectForm.get('project').errors['invalidName']">That Project Name is forbidden!</span>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" formControlName="email" class="form-control">
+        <span class="text-muted" *ngIf="!projectForm.get('email').valid && projectForm.get('email').touched && projectForm.get('project').errors">
+            <span *ngIf="projectForm.get('email').errors['required']">Email is required!</span>
+            <span *ngIf="projectForm.get('email').errors['email']">Email must be a valid email!</span>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="projStatus">Project Status</label>
+        <select id="projStatus" formControlName="projStatus" class="form-control">
+            <option *ngFor="let status of statuses" [value]="status"> {{ status }}</option>
+        </select>
+        <span class="text-muted" *ngIf="!projectForm.get('projStatus').valid && projectForm.get('projStatus').touched">
+            Project Status is required!
+        </span>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!projectForm.valid">Submit</button>
+</form>
+
+<div *ngIf="submitted">
+    <hr>
+    <h4>Submitted Form Data</h4>
+    <p>Project Name: {{ formData.project }}</p>
+    <p>Email: {{ formData.email }}</p>
+    <p>Project Status: {{ formData.projStatus }}</p>
+</div>
